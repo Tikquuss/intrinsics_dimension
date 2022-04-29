@@ -33,7 +33,7 @@ https://doi.org/10.1038/s41598-017-11873-y
 2-NN algorithm :
 1. Compute the pairwise distances for each point in the dataset $i = 1, …, N$.
 2. For each point $i$ find the two shortest distances $r_1$ and $r_2$.
-3. For each point $i$ compute $µ_i = \frac{r_1}{r_2 }$
+3. For each point $i$ compute $µ_i = \frac{r_2}{r_1}$
 4. Compute the empirical cumulate $F^{emp}(μ)$ by sorting the values of $μ$ in an ascending order through a permutation $σ$, then define $F^{emp}(μ_{σ(i)}) = \frac{1}{N}$
 5. Fit the points of the plane given by coordinates $\{(log(μ_i), −log(1−F^{emp}(μ_i))) \ | \ i=1,..., N\}$ with a straight line passing through the origin.
 
@@ -44,7 +44,7 @@ pip install intrinsics_dimension
 
 ```python
 
-from intrinsics_dimension mle_id, twonn_numpy, twonn_pytorch
+from intrinsics_dimension import mle_id, twonn_numpy, twonn_pytorch
 
 n, dim = 512, 1024
 data = torch.randn(n, dim)

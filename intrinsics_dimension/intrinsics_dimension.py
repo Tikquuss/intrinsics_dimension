@@ -114,7 +114,7 @@ def twonn_pytorch(data : torch.Tensor, return_xy : Optional[bool] = False) -> Un
     r1 = r1[non_zeros]
     r2 = r2[non_zeros]
   
-    # 3. For each point i compute $µ_i = r_1/r_2$
+    # 3. For each point i compute $µ_i = r_2/r_1$
     mu = r2/r1 # (n,)
 
     #4. Compute the empirical cumulate $F^{emp}(μ)$ by sorting the values of $μ$ in an ascending order through a permutation $σ$, then define $F^{emp}(μ_{σ(i)}) = i / N$
